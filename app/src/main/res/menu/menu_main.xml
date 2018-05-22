@@ -10,9 +10,15 @@
         />
 
     <item
-        android:id="@+id/go"
+        android:id="@+id/Log_Out"
         android:orderInCategory="100"
-        android:title="go"
+        android:title="LogOut"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/Add_Inc"
+        android:orderInCategory="100"
+        android:title="Add Incubator"
         app:showAsAction="never"
         />
 </menu>
