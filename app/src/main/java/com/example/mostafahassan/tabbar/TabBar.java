@@ -85,19 +85,19 @@ public class TabBar extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    Tab1Content tab1 = new Tab1Content();
+                    IncubatorsTable tab1 = new IncubatorsTable();
                     return tab1;
                 case 1:
-                    Tab2Content tab2 = new Tab2Content();
+                    AddBaby tab2 = new AddBaby();
                     return tab2;
                 case 2:
-                    Tab3Content tab3 = new Tab3Content();
+                    AddUser tab3 = new AddUser();
                     return tab3;
                 case 3:
-                    Tab4Content tab4 = new Tab4Content();
+                    RemoveUser tab4 = new RemoveUser();
                     return tab4;
                 case 4:
-                    Tab5Content tab5 = new Tab5Content();
+                    RemoveInc tab5 = new RemoveInc();
                     return tab5;
                 default:
                     return null;

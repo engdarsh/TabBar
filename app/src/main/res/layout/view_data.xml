@@ -28,7 +28,7 @@
                     android:textSize="22dp" />
 
                 <TextView
-                    android:id="@+id/IncNum_UserInc"
+                    android:id="@+id/IncNum_ViewData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="22dp" />
@@ -47,13 +47,31 @@
                     android:textSize="22dp" />
 
                 <TextView
-                    android:id="@+id/ChildName_UserInc"
+                    android:id="@+id/ChildName_ViewData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:textSize="22dp" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="ID : "
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/IdNum_ViewData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="22dp" />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,14 +85,32 @@
                     android:textSize="22dp" />
 
                 <TextView
-                    android:id="@+id/Date_UserInc"
+                    android:id="@+id/Date_ViewData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:textSize="22dp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="BirthDay : "
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/BirthDay_ViewData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="22dp" />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,7 +124,7 @@
                     android:textSize="22dp" />
 
                 <TextView
-                    android:id="@+id/Weight_UserInc"
+                    android:id="@+id/Weight_ViewData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -108,32 +144,14 @@
                     android:textSize="22dp" />
 
                 <TextView
-                    android:id="@+id/Gender_UserInc"
+                    android:id="@+id/Gender_ViewData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:textSize="22dp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="12dp"
-                    android:text="ID Num : "
-                    android:textSize="22dp" />
-
-                <TextView
-                    android:id="@+id/IdNum_UserInc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textSize="22dp" />
-            </LinearLayout>
 
 
             <LinearLayout
@@ -201,8 +219,6 @@
                     android:layout_height="34dp"
                     android:paddingLeft="30dp"
                     android:text="Temp = "
-
-
                     android:textSize="20dp" />
 
                 <TextView
@@ -210,17 +226,9 @@
                     android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:text="0"
-
-
                     android:textSize="20dp" />
 
             </LinearLayout>
-
-            <Button
-                android:id="@+id/ViewDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="show details" />
 
         </LinearLayout>
     </ScrollView>

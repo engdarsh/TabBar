@@ -29,12 +29,11 @@
                     android:text="IncNum : "
                     android:textSize="22dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/IncNum_baby"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:text="1"
                     android:textSize="22dp" />
             </LinearLayout>
 
@@ -157,14 +156,27 @@
                     android:layout_height="wrap_content"
                     android:inputType="text" />
             </LinearLayout>
-
+            <ProgressBar
+                android:id="@+id/registerProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:indeterminate="true"
+                android:progressBackgroundTint="@color/colorPrimaryDark"
+                android:visibility="invisible" />
             <Button
-                android:id="@+id/Add_user"
+                android:id="@+id/Add_Baby"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:text="Add" />
+
+
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

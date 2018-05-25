@@ -8,14 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Tab1Content extends Fragment implements View.OnClickListener {
+public class IncubatorsTable extends Fragment implements View.OnClickListener {
 
-    public TextView inc1,inc2,inc3,inc4;
-
+    public TextView inc1, inc2, inc3, inc4;
+    Button addInc;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,6 +32,10 @@ public class Tab1Content extends Fragment implements View.OnClickListener {
         inc3.setOnClickListener(this);
         inc4 = (TextView) rootView.findViewById(R.id.incubator4);
         inc4.setOnClickListener(this);
+        addInc = (Button) rootView.findViewById(R.id.AddInc_Incubators);
+        addInc.setOnClickListener(this);
+
+        container = (LinearLayout) rootView.findViewById(R.id.main_layout);
 
         return rootView;
 
@@ -38,6 +45,7 @@ public class Tab1Content extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.incubator1:
+                Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(getActivity().getApplication(), ViewData.class);
                 startActivity(intent1);
                 break;
@@ -55,5 +63,4 @@ public class Tab1Content extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-
 }
