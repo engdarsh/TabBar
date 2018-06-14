@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,66 +15,55 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class RemoveUser extends AppCompatActivity {
+public class AddIncubator extends AppCompatActivity {
 
-    private EditText DeletedNumber;
+    private EditText incNum;
     private Button submitBtn;
     private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_remove_user );
+        setContentView( R.layout.activity_add_incubator );
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child( "Users" );
+        databaseReference = FirebaseDatabase.getInstance().getReference().child( "Incubators" );
 
-        DeletedNumber = (EditText) findViewById( R.id.deletedNumber );
+        incNum = (EditText) findViewById( R.id.IncNum_Edite );
 
-        submitBtn = (Button) findViewById( R.id.deleteBtn );
+        submitBtn = (Button) findViewById( R.id.submitButton );
 
         submitBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String incNum_val = DeletedNumber.getText().toString();
+                String incNum_val = incNum.getText().toString();
 
                 if (!TextUtils.isEmpty( incNum_val )) {
                     checkInc();
                 } else {
                     if (incNum_val.isEmpty()) {
-                        DeletedNumber.setError( "Invalid IncNum" );
+                        incNum.setError( "Invalid IncNum" );
                     }
                 }
             }
         } );
-
     }
 
     private void startPosting() {
-        final String incNum_val = DeletedNumber.getText().toString().trim();
 
-        databaseReference.child( incNum_val ).removeValue();
-        Toast.makeText( RemoveUser.this, "Removed", Toast.LENGTH_SHORT ).show();
-        Intent singleBlogIntent = new Intent( RemoveUser.this, TabBar.class );
-        startActivity( singleBlogIntent );
-        finish();
-    }
+        final String incNum_val = incNum.getText().toString().trim();
 
-    void checkInc() {
+        final DatabaseReference newPostRef = databaseReference.child( incNum_val );
 
-        final String incNum_val = DeletedNumber.getText().toString().trim();
-
-        final Query firebaseSearchQuery = databaseReference.orderByChild( "UserPhone" ).startAt( incNum_val ).endAt( incNum_val + "\uf8ff" );
-
-        firebaseSearchQuery.addValueEventListener( new ValueEventListener() {
+        databaseReference.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    startPosting();
-                    finish();
-                } else {
-                    DeletedNumber.setError( "This Inc Not Found" );
-                    return;
-                }
+
+                newPostRef.child( "IncNum" ).setValue( incNum_val );
+                newPostRef.child( "IdNum" ).setValue( " " );
+                Intent singleBlogIntent = new Intent( AddIncubator.this, TabBar.class );
+                startActivity( singleBlogIntent );
+
+                finish();
             }
 
             @Override
@@ -83,4 +71,30 @@ public class RemoveUser extends AppCompatActivity {
             }
         } );
     }
+
+    void checkInc() {
+
+        final String incNum_val = incNum.getText().toString().trim();
+
+        final Query firebaseSearchQuery = databaseReference.orderByChild( "IncNum" ).startAt( incNum_val ).endAt( incNum_val + "\uf8ff" );
+
+        firebaseSearchQuery.addValueEventListener( new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    incNum.setError( "This Inc is Exists" );
+                    return;
+                } else {
+                    startPosting();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+
+        } );
+        finish();
+    }
+
 }

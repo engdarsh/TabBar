@@ -14,36 +14,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="40dp">
+            android:layout_marginTop="40dp">
 
             <LinearLayout
                 style="@style/LinearView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextViewWords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Incubator Number : " />
 
                 <EditText
-                    android:id="@+id/name_field"
+                    android:id="@+id/IncNum_Edite"
                     style="@style/EditViewWords"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter The Name...."/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/LinearView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp">
-
-                <EditText
-                    android:id="@+id/phone_field"
-                    style="@style/EditViewWords"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Enter The Phone...."
-                    android:inputType="phone"/>
+                    android:inputType="phone" />
 
             </LinearLayout>
 
@@ -52,10 +41,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="60dp"
                 android:background="@color/colorPrimary"
                 android:text="Add"
-                android:textColor="@color/colorWhite"/>
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="40dp" />
 
         </LinearLayout>
     </ScrollView>

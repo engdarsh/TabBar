@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.mostafahassan.tabbar.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/Add_Inc"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"
-        />
+        android:title="Add Incubator" />
+    <item
+        android:id="@+id/Remove_Inc"
+        android:orderInCategory="100"
+        android:title="Remove Incubator" />
+    <item
+        android:id="@+id/Remove_User"
+        android:orderInCategory="100"
+        android:title="Remove User" />
 
     <item
         android:id="@+id/Log_Out"
         android:orderInCategory="100"
-        android:title="LogOut"
-        app:showAsAction="never"
-        />
-    <item
-        android:id="@+id/Add_Inc"
-        android:orderInCategory="100"
-        android:title="Add Incubator"
-        app:showAsAction="never"
-        />
+        android:title="LogOut" />
+
 </menu>

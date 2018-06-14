@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/activity_post"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal">
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingTop="50dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp">
 
-            <TextView
+            <LinearLayout
+                style="@style/LinearView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextViewWords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Incubator Number : " />
+
+                <EditText
+                    android:id="@+id/IncNum_Edite"
+                    style="@style/EditViewWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="12dp"
-                android:text="Incubator Num : "
-                android:textSize="22dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@color/colorPrimary"
+                android:text="Remove"
+                android:textColor="@color/colorWhite" />
 
-            <EditText
-                android:id="@+id/ChildNam_SeleInc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
         </LinearLayout>
+    </ScrollView>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="remove Incubator" />
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -8,6 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextViewWords">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="EditViewWords">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:background">@drawable/output_outline</item>
+        <item name="android:hint">". . . . . . ."</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="LinearView">
+        <item name="android:layout_margin">13dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/input_outline</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

@@ -1,5 +1,6 @@
 package com.example.mostafahassan.tabbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,8 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.google.firebase.database.DatabaseReference;
 
 public class TabBar extends AppCompatActivity {
+
+    private Button AddIncubator;
+    private EditText GetIncNum;
+
+    private DatabaseReference mUserDatabase;
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -64,10 +75,22 @@ public class TabBar extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.Add_Inc) {
+            Intent intent = new Intent(TabBar.this, AddIncubator.class);
+            startActivity(intent);
         }
-
+        if (id == R.id.Remove_User) {
+            Intent intent = new Intent(TabBar.this, RemoveUser.class);
+            startActivity(intent);
+        }
+        if (id == R.id.Remove_Inc) {
+            Intent intent = new Intent(TabBar.this, RemoveIncubator.class);
+            startActivity(intent);
+        }
+        if (id == R.id.Log_Out) {
+            Intent intent = new Intent(TabBar.this, MainActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -88,17 +111,11 @@ public class TabBar extends AppCompatActivity {
                     IncubatorsTable tab1 = new IncubatorsTable();
                     return tab1;
                 case 1:
-                    AddBaby tab2 = new AddBaby();
+                    AddPatient tab2 = new AddPatient();
                     return tab2;
                 case 2:
                     AddUser tab3 = new AddUser();
                     return tab3;
-                case 3:
-                    RemoveUser tab4 = new RemoveUser();
-                    return tab4;
-                case 4:
-                    RemoveInc tab5 = new RemoveInc();
-                    return tab5;
                 default:
                     return null;
             }
@@ -107,8 +124,7 @@ public class TabBar extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 5;
+            return 3;
         }
     }
-
 }
